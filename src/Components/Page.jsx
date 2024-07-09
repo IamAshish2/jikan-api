@@ -22,7 +22,6 @@ const Page = () => {
   return (
     <>
     {/* using ternery operators to display loading while loading the page  */}
-
     {animeData.length === 0 ? (
       <div>
         <h1>Loading...</h1>

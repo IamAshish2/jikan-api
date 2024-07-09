@@ -20,7 +20,7 @@ const Home = () => {
       //setting the usefulData as data using the setData function
       setData(usefulData);
 
-      // console.log(usefulData);
+      console.log(usefulData);
     };
 
     //calling the getData() function
@@ -30,19 +30,24 @@ const Home = () => {
 
 
   return ( 
-    <>
-        <div>
-          
+    < >
+        <div className="sm:grid sm:grid-cols-2 lg:grid-cols-5 bg-amber-900 ">
           {data.map((id)=>(
-            <div key={id.mal_id}> 
-              {/* {} is used to use js inside here. */}
-              
-              <a href={`/page/${id.mal_id}`}>{id.title}</a>
+
+            <div key={id.mal_id} 
+            className=" flex flex-col justify-center text-center p-3  w-72 m-3 border rounded-2xl"> 
+               {/* {} is used to use js inside here. */}
+               <div className="flex flex-col h-80 bg-contain" style= {{ backgroundImage:`url(${id.images.webp.large_image_url})`}}></div>
+
+               <div className="text-red-300 text-sm mt-1 font-bold">
+                {id.title}
+              </div>
 
             </div>
           ))}
 
         </div>
+
     </>
 
   )
